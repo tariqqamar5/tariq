@@ -36,9 +36,9 @@ node {
 
     
     stage('Atmosphere Deployment to PROD Env.'){
-    sh label: '', script: 'cp -rf target/*.jar ../../../../04-Ansible/03-Playbook-Jenkins/templates/atmosphere-v1.jar'
-    sh label: '', script: "echo '<h1>TASK_ID: '${env.JOB_NAME}[${env.BUILD_NUMBER}]'</h1>' > ../../../../04-Ansible/03-Playbook-Jenkins/templates/jenkins.html"
-    sh label: '', script: 'cd ../../../../04-Ansible/03-Playbook-Jenkins;ansible-playbook webserver.yaml'
+    sh label: '', script: 'cp -rf target/*.jar ../../../../tariq/04-Ansible/03-Playbook-Jenkins/templates/atmosphere-v1.jar'
+    sh label: '', script: "echo '<h1>TASK_ID: '${env.JOB_NAME}[${env.BUILD_NUMBER}]'</h1>' > ../../../../tariq/04-Ansible/03-Playbook-Jenkins/templates/jenkins.html"
+    sh label: '', script: 'cd ../../../../tariq/04-Ansible/03-Playbook-Jenkins;ansible-playbook webserver.yaml'
     }
     
     }
@@ -48,7 +48,7 @@ node {
 
 def notify(status){
     emailext (
-        to: "amitvashist7@gmail.com",
+        to: "tariqqamar5@gmail.com",
         subject: "${status}: Job '${env.JOB_NAME}[${env.BUILD_NUMBER}]'",
         body: """<p>"${status}: Job '${env.JOB_NAME}[${env.BUILD_NUMBER}]'"</p>""",
 )
