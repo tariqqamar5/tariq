@@ -3,7 +3,7 @@ node {
     notify('Started')
     
     stage('Git CheckOut'){
-        git 'https://github.com/amitvashisttech/devops-acc-20200113.git'
+        git 'https://github.com/tariqqamar5/tariq.git'
     }
     
     def project_path = "02-Jenkins/atmosphere/spring-boot-samples/spring-boot-sample-atmosphere"
