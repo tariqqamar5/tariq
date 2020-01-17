@@ -1,0 +1,38 @@
+---
+
+- hosts: 'dc:!ansible'
+  become: yes 
+  vars:
+    doc_root: "/var/www/html"
+
+
+  tasks:
+  - name: Install Apache Packages
+    apt: name=apache2 state=present
+
+  - name: Bring the Apache Service
+    service: name=apache2 state=started
+
+  - name: Deploy Custom Web Page
+    copy: src=templates/index.html dest={{doc_root}}/index.html
+
+  - name: Download Mario Image from Web.
+    get_url: url=http://www.mariomayhem.com/downloads/wallpapers/7/nsmb_wp7_1280.jpg dest=/var/www/html/mario.jpg mode=0755
+
+  - name: Deploy Info Template.
+    template: src=templates/info.j2 dest={{doc_root}}/info.html
+
+  - name: Install Java Packages
+    apt: name=openjdk-8-jdk state=present
+
+
+  - name: Deploy Jenkins Web Page
+    copy: src=templates/jenkins.html dest={{doc_root}}/jenkins.html
+   
+  - name: Deploy Atmosphere Chat App Jar.
+    copy: src=templates/atmosphere-v1.jar dest={{doc_root}}/atmosphere-v1.jar
+
+
+  - name: Excute Atmosphere Chat App Jar.
+    shell: nohup /usr/bin/java -jar {{doc_root}}/atmosphere-v1.jar & > nohup.out
+ 

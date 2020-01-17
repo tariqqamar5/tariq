@@ -1,0 +1,11 @@
+Hello World
+Welcome to the DevOps Demos - Topic No.1 is GIT
+
+
+
+<<<<<<< HEAD
+
+Conflict - Test - 02 
+=======
+Confict - Test - 01 
+>>>>>>> 94b4ef4bad0d087d8798a704ea099dc97bbfe5a5

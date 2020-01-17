@@ -1,0 +1,298 @@
+    1  apt-get update ; apt-get install openjdk-8-jdk -y
+    2  wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war 
+    3  java -jar jenkins.war --httpPort=8081 &
+    4  apt-get install maven -y 
+    5  git clone https://github.com/amitvashist7/devops-mind-21092019.git
+    6  ls
+    7  cd devops-mind-21092019/atmosphere/spring-boot-samples/spring-boot-sample-atmosphere/
+    8  ls
+    9  mvn compile 
+   10  mvn test
+   11  mvn package
+   12  ls
+   13  cd target/
+   14  ls
+   15  java -jar spring-boot-sample-atmosphere-1.4.0.BUILD-SNAPSHOT.jar 
+   16  ls
+   17  cd 
+   18  ls
+   19  cd .jenkins/
+   20  ls
+   21  cd workspace/
+   22  ls
+   23  cd atmosphere-chat-app/
+   24  ls
+   25  cd 02-Jenkins/atmosphere/spring-boot-samples/spring-boot-sample-atmosphere/
+   26  ls
+   27  cd target/
+   28  ls
+   29  cd ..
+   30  ls
+   31  sl
+   32  cdcd 
+   33  cd 
+   34  ls
+   35  cd devops-mind-21092019/
+   36  ls
+   37  cd ..
+   38  ls
+   39  git clone https://github.com/amitvashisttech/devops-acc-20200113.git
+   40  ls
+   41  cd devops-acc-20200113/
+   42  ls
+   43  cd 02-Jenkins/
+   44  ls
+   45  vim Jenkinefile
+   46  ls
+   47  cd ..
+   48  ls
+   49  git add . ; git commit -m "Jenkinsfile" ; git push 
+   50  ls
+   51  cd devops-acc-20200113/
+   52  ls
+   53  git pull 
+   54  ls
+   55  echo "Test #01" > CHANGEME.txt
+   56  git add . ; git commit -m "Change Me" ; git push 
+   57  echo "Test #02" > CHANGEME.txt
+   58  git add . ; git commit -m "Change Me - Test 02" ; git push 
+   59  apt-get install     apt-transport-https     ca-certificates     curl     gnupg-agent     software-properties-common -y ; curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -; sudo add-apt-repository    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   60     $(lsb_release -cs) \
+   61     stable"; apt-get update; apt-get install docker-ce docker-ce-cli containerd.io -y 
+   62  docker version
+   63  docker run --restart unless-stopped --name mailhog -p 1025:1025 -p 8025:8025 -d mailhog/mailhog 
+   64  docker ps 
+   65  ls
+   66  cd 02-Jenkins/
+   67  ls
+   68  vi Jenkinefile-Email
+   69  ls
+   70  history 
+   71  vi History_Day2.txt 
+   72  git add . ; git commit -m "Jenkins Email Config" ; git push
+   73  ls
+   74  docker version
+   75  docker ps 
+   76  ls
+   77  docker images 
+   78  docker run busybox echo "Hello World"
+   79  docker images 
+   80  docker run busybox echo "Hello World Test 2"
+   81  docker ps 
+   82  docker ps -a
+   83  history 
+   84  docker images 
+   85  docker run -it ubuntu 
+   86  cat /etc/*-release
+   87  uname -a 
+   88  docker run -it centos
+   89  docker ps 
+   90  docker ps -a
+   91  docker ps 
+   92  docker attach 8f31f3b67077        
+   93  docker ps 
+   94  docker ps -a 
+   95  docker start 8f31f3b67077        
+   96  docker ps 
+   97  docker attach 8f31f3b67077        
+   98  ls
+   99  docker ps 
+  100  docker kill  8f31f3b67077
+  101  docker rm 8f31f3b67077
+  102  docker ps -a
+  103  history 
+  104  ls
+  105  docker run -it centos 
+  106  docker ps 
+  107  docker images 
+  108  docker commit -p -m "CentOS Apache" fb609f4c3bd4  centos-apache:v1
+  109  docker images 
+  110  docker run -itd centos-apache:v1
+  111  docker ps 
+  112  docker inspect 1ab1a4142f1e        
+  113  curl 172.17.0.5
+  114  docker run -itd centos-apache:v1
+  115  docker ps 
+  116  curl 172.17.0.5
+  117  curl 172.17.0.6
+  118  curl 172.17.0.7
+  119  curl 172.17.0.8
+  120  curl 172.17.0.9
+  121  curl 172.17.0.10
+  122  curl 172.17.0.11
+  123  curl 172.17.0.12
+  124  curl 172.17.0.4
+  125  curl 172.17.0.3
+  126  curl 172.17.0.2
+  127  docker run -it centos-apache:v1
+  128  curl 172.17.0.12
+  129  docker commit -p -m "CentOS Apache 2" 01261871f6e6  centos-apache:v2
+  130  docker images 
+  131  docker kill $(docker ps -aq)
+  132  docker rm $(docker ps -aq)
+  133  docker ps -a 
+  134  ls
+  135  docker run -itd centos-apache:v1
+  136  docker run -itd centos-apache:v2
+  137  curl 172.17.0.2
+  138  curl 172.17.0.3
+  139  ls
+  140  docker images 
+  141  history 
+  142  ls
+  143  cd devops-acc-20200113/
+  144  ls
+  145  mkdir 03-Docker
+  146  ls
+  147  cd 03-Docker/
+  148  ls
+  149  git pulll 
+  150  git pull
+  151  history > History_Day3.txt
+  152  git add . ; git commit -m "Docker"; git push 
+  153  ls
+  154  cd devops-acc-20200113/
+  155  ls
+  156  cd 03-Docker/
+  157  ls
+  158  mkdir Dockerfile/apache -p 
+  159  cd Dockerfile/apache/
+  160  ls
+  161  vim Dockerfile
+  162  docker build -t ubuntu-apache:v1 .
+  163  docker images 
+  164  cd
+  165  docker run -d ubuntu-apache:v1 
+  166  docker ps 
+  167  docker inspect ca3e0687d74e        
+  168  curl 172.17.0.4
+  169  curl localhost
+  170  docker run -d -p 80:8081 ubuntu-apache:v1 
+  171  docker ps 
+  172  curl localhost
+  173  docker run -d -p 8081:80 ubuntu-apache:v1 
+  174  docker ps 
+  175  curl localhost
+  176  curl localhost:8081
+  177  ls
+  178  cd ..
+  179  cd
+  180  ls
+  181  cd devops-acc-20200113/
+  182  ls
+  183  cd 03-Docker/
+  184  ls
+  185  cd ..
+  186  ls
+  187  git add . 
+  188  git commit -m "DockerFile"
+  189  ls
+  190  cd 03-Docker/
+  191  ls
+  192  cd Dockerfile/
+  193  ls
+  194  cd apache/
+  195  ls
+  196  vim Dockerfile 
+  197  docker build -t ubuntu-apache:v2 .
+  198  docker images 
+  199  docker run -d -P ubuntu-apache:v2
+  200  docker ps 
+  201  ls
+  202  git add . ; git commit -m "Update 2"
+  203  git config --global user.name "Amit"
+  204  git config --global user.email you@example.com
+  205  git add . ; git commit -m "Update 2"
+  206  ls
+  207  vim amit.html
+  208  ls
+  209  vim Dockerfile 
+  210  docker build -t ubuntu-apache:v3 .
+  211  docker run -d -P ubuntu-apache:v3
+  212  docker ps 
+  213  netstat -tulnp 
+  214  iptables -L
+  215  ls
+  216  cd ..
+  217  ls
+  218  cd ..
+  219  ls
+  220  history >> History_Day3.txt 
+  221  git add . ; git commit -m "Update 3"
+  222  git push 
+  223  ls
+  224  cd devops-mind-21092019/
+  225  ls
+  226  cd docker/
+  227  ls
+  228  cp -rf docker-compose ../../devops-acc-20200113/03-Docker/
+  229  ls
+  230  cd ..
+  231  ls
+  232  cd ..
+  233  ls
+  234  cd devops-acc-20200113/
+  235  ls
+  236  cd 03-Docker/
+  237  ls
+  238  cd docker-compose/
+  239  ls
+  240  cd hello-world/
+  241  ls
+  242  cat docker-compose.yaml 
+  243  ls
+  244  cd ..
+  245  ls
+  246  cd myapache/
+  247  ls
+  248  cat docker-compose.yaml 
+  249  ls
+  250  cd ..
+  251  ls
+  252  cd ..
+  253  ls
+  254  cd ..
+  255  ls
+  256  sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  257  chmod +x /usr/local/bin/docker-compose
+  258  cd 
+  259  docker-compose version
+  260  ls
+  261  cd - 
+  262  ls
+  263  cd 03-Docker/
+  264  ls
+  265  cd docker-compose/
+  266  ls
+  267  cd myapache/
+  268  ls
+  269  cat index.html 
+  270  cat Dockerfile 
+  271  ls
+  272  vim docker-compose.yaml 
+  273  docker-compose up --build
+  274  docker images 
+  275  docker-compose up --build -d
+  276  docker ps 
+  277  ls
+  278  cat index.html 
+  279  vi index.html 
+  280  docker-compose up --build -d
+  281  ls
+  282  cd ..
+  283  ls
+  284  cd hello-world/
+  285  ls
+  286  cat docker-compose.yaml 
+  287  docker images 
+  288  vi docker-compose.yaml 
+  289  docker-compose up 
+  290  docker-compose up -d
+  291  docker-compose ps
+  292  docker-compose stop
+  293  docker-compose rm
+  294  cd ..
+  295  ls
+  296  cd ..
+  297  ls
+  298  history > History_Day3.txt 

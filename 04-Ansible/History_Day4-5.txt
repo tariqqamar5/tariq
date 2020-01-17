@@ -1,0 +1,513 @@
+    1  apt-get update ; apt-get install openjdk-8-jdk -y
+    2  wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war 
+    3  java -jar jenkins.war --httpPort=8081 &
+    4  apt-get install maven -y 
+    5  git clone https://github.com/amitvashist7/devops-mind-21092019.git
+    6  ls
+    7  cd devops-mind-21092019/atmosphere/spring-boot-samples/spring-boot-sample-atmosphere/
+    8  ls
+    9  mvn compile 
+   10  mvn test
+   11  mvn package
+   12  ls
+   13  cd target/
+   14  ls
+   15  java -jar spring-boot-sample-atmosphere-1.4.0.BUILD-SNAPSHOT.jar 
+   16  ls
+   17  cd 
+   18  ls
+   19  cd .jenkins/
+   20  ls
+   21  cd workspace/
+   22  ls
+   23  cd atmosphere-chat-app/
+   24  ls
+   25  cd 02-Jenkins/atmosphere/spring-boot-samples/spring-boot-sample-atmosphere/
+   26  ls
+   27  cd target/
+   28  ls
+   29  cd ..
+   30  ls
+   31  sl
+   32  cdcd 
+   33  cd 
+   34  ls
+   35  cd devops-mind-21092019/
+   36  ls
+   37  cd ..
+   38  ls
+   39  git clone https://github.com/amitvashisttech/devops-acc-20200113.git
+   40  ls
+   41  cd devops-acc-20200113/
+   42  ls
+   43  cd 02-Jenkins/
+   44  ls
+   45  vim Jenkinefile
+   46  ls
+   47  cd ..
+   48  ls
+   49  git add . ; git commit -m "Jenkinsfile" ; git push 
+   50  ls
+   51  cd devops-acc-20200113/
+   52  ls
+   53  git pull 
+   54  ls
+   55  echo "Test #01" > CHANGEME.txt
+   56  git add . ; git commit -m "Change Me" ; git push 
+   57  echo "Test #02" > CHANGEME.txt
+   58  git add . ; git commit -m "Change Me - Test 02" ; git push 
+   59  apt-get install     apt-transport-https     ca-certificates     curl     gnupg-agent     software-properties-common -y ; curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -; sudo add-apt-repository    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   60     $(lsb_release -cs) \
+   61     stable"; apt-get update; apt-get install docker-ce docker-ce-cli containerd.io -y 
+   62  docker version
+   63  docker run --restart unless-stopped --name mailhog -p 1025:1025 -p 8025:8025 -d mailhog/mailhog 
+   64  docker ps 
+   65  ls
+   66  cd 02-Jenkins/
+   67  ls
+   68  vi Jenkinefile-Email
+   69  ls
+   70  history 
+   71  vi History_Day2.txt 
+   72  git add . ; git commit -m "Jenkins Email Config" ; git push
+   73  ls
+   74  docker version
+   75  docker ps 
+   76  ls
+   77  docker images 
+   78  docker run busybox echo "Hello World"
+   79  docker images 
+   80  docker run busybox echo "Hello World Test 2"
+   81  docker ps 
+   82  docker ps -a
+   83  history 
+   84  docker images 
+   85  docker run -it ubuntu 
+   86  cat /etc/*-release
+   87  uname -a 
+   88  docker run -it centos
+   89  docker ps 
+   90  docker ps -a
+   91  docker ps 
+   92  docker attach 8f31f3b67077        
+   93  docker ps 
+   94  docker ps -a 
+   95  docker start 8f31f3b67077        
+   96  docker ps 
+   97  docker attach 8f31f3b67077        
+   98  ls
+   99  docker ps 
+  100  docker kill  8f31f3b67077
+  101  docker rm 8f31f3b67077
+  102  docker ps -a
+  103  history 
+  104  ls
+  105  docker run -it centos 
+  106  docker ps 
+  107  docker images 
+  108  docker commit -p -m "CentOS Apache" fb609f4c3bd4  centos-apache:v1
+  109  docker images 
+  110  docker run -itd centos-apache:v1
+  111  docker ps 
+  112  docker inspect 1ab1a4142f1e        
+  113  curl 172.17.0.5
+  114  docker run -itd centos-apache:v1
+  115  docker ps 
+  116  curl 172.17.0.5
+  117  curl 172.17.0.6
+  118  curl 172.17.0.7
+  119  curl 172.17.0.8
+  120  curl 172.17.0.9
+  121  curl 172.17.0.10
+  122  curl 172.17.0.11
+  123  curl 172.17.0.12
+  124  curl 172.17.0.4
+  125  curl 172.17.0.3
+  126  curl 172.17.0.2
+  127  docker run -it centos-apache:v1
+  128  curl 172.17.0.12
+  129  docker commit -p -m "CentOS Apache 2" 01261871f6e6  centos-apache:v2
+  130  docker images 
+  131  docker kill $(docker ps -aq)
+  132  docker rm $(docker ps -aq)
+  133  docker ps -a 
+  134  ls
+  135  docker run -itd centos-apache:v1
+  136  docker run -itd centos-apache:v2
+  137  curl 172.17.0.2
+  138  curl 172.17.0.3
+  139  ls
+  140  docker images 
+  141  history 
+  142  ls
+  143  cd devops-acc-20200113/
+  144  ls
+  145  mkdir 03-Docker
+  146  ls
+  147  cd 03-Docker/
+  148  ls
+  149  git pulll 
+  150  git pull
+  151  history > History_Day3.txt
+  152  git add . ; git commit -m "Docker"; git push 
+  153  ls
+  154  cd devops-acc-20200113/
+  155  ls
+  156  cd 03-Docker/
+  157  ls
+  158  mkdir Dockerfile/apache -p 
+  159  cd Dockerfile/apache/
+  160  ls
+  161  vim Dockerfile
+  162  docker build -t ubuntu-apache:v1 .
+  163  docker images 
+  164  cd
+  165  docker run -d ubuntu-apache:v1 
+  166  docker ps 
+  167  docker inspect ca3e0687d74e        
+  168  curl 172.17.0.4
+  169  curl localhost
+  170  docker run -d -p 80:8081 ubuntu-apache:v1 
+  171  docker ps 
+  172  curl localhost
+  173  docker run -d -p 8081:80 ubuntu-apache:v1 
+  174  docker ps 
+  175  curl localhost
+  176  curl localhost:8081
+  177  ls
+  178  cd ..
+  179  cd
+  180  ls
+  181  cd devops-acc-20200113/
+  182  ls
+  183  cd 03-Docker/
+  184  ls
+  185  cd ..
+  186  ls
+  187  git add . 
+  188  git commit -m "DockerFile"
+  189  ls
+  190  cd 03-Docker/
+  191  ls
+  192  cd Dockerfile/
+  193  ls
+  194  cd apache/
+  195  ls
+  196  vim Dockerfile 
+  197  docker build -t ubuntu-apache:v2 .
+  198  docker images 
+  199  docker run -d -P ubuntu-apache:v2
+  200  docker ps 
+  201  ls
+  202  git add . ; git commit -m "Update 2"
+  203  git config --global user.name "Amit"
+  204  git config --global user.email you@example.com
+  205  git add . ; git commit -m "Update 2"
+  206  ls
+  207  vim amit.html
+  208  ls
+  209  vim Dockerfile 
+  210  docker build -t ubuntu-apache:v3 .
+  211  docker run -d -P ubuntu-apache:v3
+  212  docker ps 
+  213  netstat -tulnp 
+  214  iptables -L
+  215  ls
+  216  cd ..
+  217  ls
+  218  cd ..
+  219  ls
+  220  history >> History_Day3.txt 
+  221  git add . ; git commit -m "Update 3"
+  222  git push 
+  223  ls
+  224  cd devops-mind-21092019/
+  225  ls
+  226  cd docker/
+  227  ls
+  228  cp -rf docker-compose ../../devops-acc-20200113/03-Docker/
+  229  ls
+  230  cd ..
+  231  ls
+  232  cd ..
+  233  ls
+  234  cd devops-acc-20200113/
+  235  ls
+  236  cd 03-Docker/
+  237  ls
+  238  cd docker-compose/
+  239  ls
+  240  cd hello-world/
+  241  ls
+  242  cat docker-compose.yaml 
+  243  ls
+  244  cd ..
+  245  ls
+  246  cd myapache/
+  247  ls
+  248  cat docker-compose.yaml 
+  249  ls
+  250  cd ..
+  251  ls
+  252  cd ..
+  253  ls
+  254  cd ..
+  255  ls
+  256  sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  257  chmod +x /usr/local/bin/docker-compose
+  258  cd 
+  259  docker-compose version
+  260  ls
+  261  cd - 
+  262  ls
+  263  cd 03-Docker/
+  264  ls
+  265  cd docker-compose/
+  266  ls
+  267  cd myapache/
+  268  ls
+  269  cat index.html 
+  270  cat Dockerfile 
+  271  ls
+  272  vim docker-compose.yaml 
+  273  docker-compose up --build
+  274  docker images 
+  275  docker-compose up --build -d
+  276  docker ps 
+  277  ls
+  278  cat index.html 
+  279  vi index.html 
+  280  docker-compose up --build -d
+  281  ls
+  282  cd ..
+  283  ls
+  284  cd hello-world/
+  285  ls
+  286  cat docker-compose.yaml 
+  287  docker images 
+  288  vi docker-compose.yaml 
+  289  docker-compose up 
+  290  docker-compose up -d
+  291  docker-compose ps
+  292  docker-compose stop
+  293  docker-compose rm
+  294  cd ..
+  295  ls
+  296  cd ..
+  297  ls
+  298  history > History_Day3.txt 
+  299  git add . ; git commit -m "Docker-Compose"; git push 
+  300  ls
+  301  cd devops-mind-21092019/
+  302  ls
+  303  cd jenkins/
+  304  ls
+  305  cd ..
+  306  ls
+  307  cd atmosphere/spring-boot-samples/spring-boot-sample-atmosphere/
+  308  ls
+  309  cat Dockerfile 
+  310  ls
+  311  cd devops-mind-21092019/atmosphere/spring-boot-samples/spring-boot-sample-atmosphere/
+  312  ls
+  313  ls -ltr 
+  314  ls -ltr target/
+  315  lls
+  316  ls
+  317  cat Dockerfile 
+  318  cat docker-compose.yaml 
+  319  docker-compose up --build -d 
+  320  docker ps
+  321  docker-compose ps 
+  322  docker-compose dm
+  323  docker-compose rm
+  324  docker-compose stop
+  325  docker-compose srm
+  326  docker-compose rm
+  327  docker-compose rmi
+  328  docker images
+  329  docker ps -aq
+  330  docker kill $(docker ps -aq)
+  331  docker rm $(docker ps -aq)
+  332  docker ps -a
+  333  docker images 
+  334  docker images -q
+  335  docker rmi $(docker images -q)
+  336  docker images 
+  337  ls
+  338  cd 
+  339  ls
+  340  cd devops-acc-20200113/
+  341  ls
+  342  cd 02-Jenkins/atmosphere/spring-boot-samples/spring-boot-sample-atmosphere/
+  343  ls
+  344  cp -rf ~/devops-mind-21092019/atmosphere/spring-boot-samples/spring-boot-sample-atmosphere/Dockerfile .
+  345  cp -rf ~/devops-mind-21092019/atmosphere/spring-boot-samples/spring-boot-sample-atmosphere/docker-compose.yaml .
+  346  ls
+  347  cd ../../../../
+  348  ls
+  349  cd 02-Jenkins/
+  350  ls
+  351  cp -rf Jenkinefile-Email-Docker
+  352  cp -rf Jenkinefile-Email Jenkinefile-Email-Docker
+  353  vim Jenkinefile-Email-Docker 
+  354  ps -ef | grep jenkins
+  355  cd 
+  356  ls
+  357  java -jar jenkins.war --httpPort=8081
+  358  java -jar jenkins.war --httpPort=8081 &
+  359  ls
+  360  cd devops-acc-20200113/
+  361  ls
+  362  git config --list 
+  363  ls
+  364  cp -rf 02-Jenkins/Jenkinefile-Email-Docker Jenkinsfile
+  365  ls
+  366  git add . ; git commit -m "Jenkins"; git push 
+  367  history | grep -i mailhog
+  368  docker run --restart unless-stopped --name mailhog -p 1025:1025 -p 8025:8025 -d mailhog/mailhog 
+  369  docker ps 
+  370  apt-get install ansible -y 
+  371  ansible -version 
+  372  ansible --version 
+  373  useradd vagrant
+  374  passwd vagrant
+  375  grep -i "PasswordAuthentication" /etc/ssh/sshd_config 
+  376  sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/g" /etc/ssh/sshd_config 
+  377  grep -i "PasswordAuthentication" /etc/ssh/sshd_config 
+  378  service sshd restart
+  379  ls
+  380  cd devops-acc-20200113/
+  381  ls
+  382  mkdir 04-Ansible
+  383  cd 04-Ansible/
+  384  ls
+  385  mkdir 01-Inventory
+  386  cd 01-Inventory/
+  387  ls
+  388  ssh vagrant@10.128.0.29
+  389  vi /etc/sudoers
+  390  ssh vagrant@10.128.0.30
+  391  ssh vagrant@10.128.0.31
+  392  ls
+  393  vim inventory
+  394  cat inventory 
+  395  ansible all -i inventory -m ping -u vagrant -s -k 
+  396  apt-get install sshpass -y 
+  397  ansible all -i inventory -m ping -u vagrant -s -k 
+  398  mkdir /home/vagrant
+  399  ansible all -i inventory -m ping -u vagrant -s -k 
+  400  chmod 775 /home/vagrant
+  401  chown vagrant.vagrant /home/vagrant
+  402  ansible all -i inventory -m ping -u vagrant -s -k 
+  403  passwd 
+  404  vi /etc/ssh/sshd_config 
+  405  service sshd restart
+  406  ansible all -i inventory -m ping  -k 
+  407  ls
+  408  cd devops-acc-20200113/04-Ansible/01-Inventory/
+  409  ls
+  410  ansible all -i inventory -m ping  -k 
+  411  ansible-doc  -l 
+  412  ansible-doc  command
+  413  uname -a 
+  414  ansible all -i inventory -m command -a 'uname -a'  -k 
+  415  ansible all -i inventory -m command -a 'df -h'  -k 
+  416  history 
+  417  cat /etc/*-release
+  418  ansible all -i inventory -m command -a 'cat /etc/*-release'  -k 
+  419  cat /etc/*-release
+  420  ansible all -i inventory -m shell -a 'cat /etc/*-release'  -k 
+  421  history 
+  422  ls
+  423  cd ..
+  424  ls
+  425  vi 01-Inventory/
+  426  ls
+  427  cd 01-Inventory/
+  428  ls
+  429  vim inventory 
+  430  ansible all -i inventory -m command -a 'uname -a'  -k 
+  431  ansible web -i inventory -m command -a 'uname -a'  -k 
+  432  ansible db -i inventory -m command -a 'uname -a'  -k 
+  433  ansible db:web -i inventory -m command -a 'uname -a'  -k 
+  434  vim inventory 
+  435  vi inventory 
+  436  ansible web -i inventory -m command -a 'uname -a'  -k 
+  437  ansible 'web:&prod' -i inventory -m command -a 'uname -a'  -k 
+  438  vi inventory 
+  439  ansible 'web:&prod' -i inventory -m command -a 'uname -a'  -k 
+  440  ansible 'web:&prod:!ansible' -i inventory -m command -a 'uname -a'  -k 
+  441  ls
+  442  cd ..
+  443  ls
+  444  cp -rf 01-Inventory 02-Playbook
+  445  ls
+  446  cd 02-Playbook/
+  447  ls
+  448  vim webserver.yaml
+  449  ansible-playbook -i inventory webserver.yaml -u vagrant -k
+  450  ansible-playbook -i inventory webserver.yaml  -k
+  451  ls
+  452  mkdir templates
+  453  vim templates/index.html
+  454  vim webserver.yaml 
+  455  ansible-playbook -i inventory webserver.yaml  -k
+  456  vim inventory 
+  457  vim webserver.yaml 
+  458  ansible-playbook -i inventory webserver.yaml  -k
+  459  ls
+  460  vim templates/info.j2
+  461  ls
+  462  vim webserver.yaml 
+  463  ansible-playbook -i inventory webserver.yaml  -k
+  464  ls
+  465  cat templates/info.j2 
+  466  ansible-playbook -i inventory webserver.yaml  -k
+  467  ls
+  468  cd ..
+  469  ls
+  470  cd ..
+  471  ls
+  472  git add . ; git commit -m "Ansible" ; git push 
+  473  history 
+  474  ls
+  475  cd devops-acc-20200113/
+  476  ls
+  477  cd 
+  478  cat .ssh/known_hosts 
+  479  ls
+  480  cd devops-acc-20200113/
+  481  ls
+  482  cd 04-Ansible/02-Playbook/
+  483  ls
+  484  vim inventory 
+  485  ls
+  486  ansible dc -i inventory -m ping 
+  487  > /root/.ssh/known_hosts 
+  488  cat /root/.ssh/known_hosts
+  489  ansible dc -i inventory -m ping 
+  490  cat /root/.ssh/known_hosts
+  491  ls
+  492  history | grep -i apt
+  493  vim webserver.yaml 
+  494  ansible dc -i inventory -m ping 
+  495  grep -i checking /etc/ansible/ansible.cfg 
+  496  vim ansible.cfg
+  497  ls
+  498  cat /root/.ssh/known_hosts
+  499  ansible dc -i inventory -m ping 
+  500  cat /root/.ssh/known_hosts
+  501  vim ansible.cfg 
+  502  ansible dc -i inventory -m ping 
+  503  vi ansible.cfg 
+  504  ansible dc  -m ping 
+  505  ansible-playbook webserver.yaml 
+  506  ls
+  507  cat webserver.yaml 
+  508  ls
+  509  cd ../../
+  510  l
+  511  cd 04-Ansible/
+  512  ls
+  513  history > History_Day4-5.txt

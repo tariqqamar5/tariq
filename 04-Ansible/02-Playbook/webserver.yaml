@@ -1,0 +1,24 @@
+---
+
+- hosts: dc
+  become: yes 
+
+
+  tasks:
+  - name: Install Apache Packages
+    apt: name=apache2 state=present
+
+  - name: Bring the Apache Service
+    service: name=apache2 state=started
+
+  - name: Deploy Custom Web Page
+    copy: src=templates/index.html dest=/var/www/html/index.html
+
+  - name: Download Mario Image from Web.
+    get_url: url=http://www.mariomayhem.com/downloads/wallpapers/7/nsmb_wp7_1280.jpg dest=/var/www/html/mario.jpg mode=0755
+
+  - name: Deploy Info Template.
+    template: src=templates/info.j2 dest=/var/www/html/info.html
+
+  - name: Install Java Packages
+    apt: name=openjdk-8-jdk state=present
