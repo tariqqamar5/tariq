@@ -5,7 +5,7 @@
 
 [web]
 172.31.0.11
-10.128.0.12
+172.31.0.12
 
 [db]
 172.31.0.10
@@ -26,5 +26,5 @@ db
 
 
 [dc:vars]
-ansible_ssh_user=root
-ansible_ssh_pass=redhat@123
+ansible_ssh_user=vagrant
+ansible_ssh_pass=123456
